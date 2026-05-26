@@ -1,0 +1,17 @@
+spring:
+  config:
+    activate:
+      on-profile: staging
+  datasource:
+    url: jdbc:postgresql://<SUPABASE_POOLER_HOST>:6543/postgres?sslmode=require
+    username: <SUPABASE_DB_USER>
+    password: <SUPABASE_DB_PASSWORD>
+    hikari:
+      maximum-pool-size: 15
+      connection-timeout: 30000
+      idle-timeout: 300000
+      max-lifetime: 1200000
+      keepalive-time: 240000
+  jpa:
+    hibernate:
+      ddl-auto: validate
